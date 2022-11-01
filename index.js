@@ -28,7 +28,6 @@ export const encodeString = (data, len=4)=>{
     unique.forEach((val)=>{
         enc[val] = generateRandomId(len)
     })
-    console.log("ENC",enc)
     var encLen = Object.keys(enc).length;
     var output = `${(len<10)? '0'+len: len}${(encLen<10)? '0'+encLen: encLen}`
     for(const property in enc){
@@ -37,7 +36,6 @@ export const encodeString = (data, len=4)=>{
     for(var i=0;i<data.length;i++){
         output+=enc[data[i]]
     }
-    console.log("Output: ", output)
     return(output)
 }
 export const decodeString = (data)=>{
@@ -47,10 +45,26 @@ export const decodeString = (data)=>{
         keys:{}
     }
     data = data.slice(4,data.length)
-    console.log(data.length/extract.encLen)
+    const keyData = data.slice(0,(extract.len*extract.encLen)+extract.encLen)
+    data = data.slice((extract.len*extract.encLen)+extract.encLen, data.length)
 
-    console.log(extract.keys)
-
+    for(var i=0;i<keyData.length;i+=5){
+        var test = ""
+        for(var j=0;j<5;j++){
+            test+=keyData[i+j]
+        }
+        var value = test[0]
+        extract.keys[test.slice(1,test.length)] = value 
+    }
+    var output = ""
+    for(var i=0;i<data.length;i+=4){
+        var test = ""
+        for(var j=0;j<4;j++){
+            test+=data[i+j]
+        }
+        output += extract.keys[test]
+    }
+    return(output)
 }
 
-decodeString(encodeString("aa"))
+console.log(decodeString(encodeString()))
