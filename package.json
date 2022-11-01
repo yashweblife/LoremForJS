@@ -1,0 +1,25 @@
+{
+  "name": "loremforjs",
+  "version": "1.0.0",
+  "description": "Generate lorem text",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashweblife/LoremForJS.git"
+  },
+  "keywords": [
+    "lorem",
+    "js",
+    "text",
+    "generator"
+  ],
+  "author": "YashWebLife",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashweblife/LoremForJS/issues"
+  },
+  "homepage": "https://github.com/yashweblife/LoremForJS#readme"
+}
