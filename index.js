@@ -383,8 +383,13 @@ var asciiText = {
         "..........",
     ]
 }
-
-export const asciiConsole = (a,b) => {
+/**
+ * # AsciiConsole
+ * Enter a text input and it will be converted to ASCII output in the console
+ * @param {*} a Text input
+ * @param {*} b style
+ */
+export const asciiConsole = (a, b) => {
     var output = ""
     var gatherText = a.toLowerCase().split("")
     var gatherRes = []
@@ -402,12 +407,13 @@ export const asciiConsole = (a,b) => {
     lines.forEach((l) => {
         output += l + '\n'
     })
-    if(b){
-        console.log("%c"+output,b)
+    if (b) {
+        console.log("%c" + output, b)
     }
-    else{
+    else {
         console.log(output)
     }
 
 }
-asciiConsole("Firebase", "background-color:black;color:white; box-shadow:0 0 1em 0 rgba(0,0,0,0.5);border-radius:1em;margin:0.1em")
+asciiConsole("This is fun", "background-color:black;color:red; box-shadow:0 0 1em 0 rgba(0,0,0,0.5)")
+asciiConsole("Isnt it", "background-color:black;color:red; box-shadow:0 0 1em 0 rgba(0,0,0,0.5)")
