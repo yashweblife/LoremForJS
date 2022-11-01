@@ -384,7 +384,7 @@ var asciiText = {
     ]
 }
 
-export const asciiConsole = (a) => {
+export const asciiConsole = (a,b) => {
     var output = ""
     var gatherText = a.toLowerCase().split("")
     var gatherRes = []
@@ -402,7 +402,12 @@ export const asciiConsole = (a) => {
     lines.forEach((l) => {
         output += l + '\n'
     })
-    console.log(output)
+    if(b){
+        console.log("%c"+output,b)
+    }
+    else{
+        console.log(output)
+    }
 
 }
-asciiConsole("Firebase")
+asciiConsole("Firebase", "background-color:black;color:white; box-shadow:0 0 1em 0 rgba(0,0,0,0.5);border-radius:1em;margin:0.1em")
