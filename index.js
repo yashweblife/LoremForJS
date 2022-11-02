@@ -415,5 +415,3 @@ export const asciiConsole = (a, b) => {
     }
 
 }
-asciiConsole("This is fun", "background-color:black;color:red; box-shadow:0 0 1em 0 rgba(0,0,0,0.5)")
-asciiConsole("Isnt it", "background-color:black;color:red; box-shadow:0 0 1em 0 rgba(0,0,0,0.5)")
