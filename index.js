@@ -415,3 +415,25 @@ export const asciiConsole = (a, b) => {
     }
 
 }
+
+export const countLetterOccurance = (a, b)=>{
+    var output = 0
+    for(var i=0;i<b.length;i++){
+        if(b[i] == a){
+            output++
+        }
+    }
+    return(output)
+}
+export const checkValidPassword = (pass)=>{
+    if(pass == null || pass == undefined) return(new Error("Passoword is null"))
+    if(pass.length < 8) return(new Error("Password is to short"))
+    return(true)
+}
+export const checkValidEmail = (email)=>{
+    if(email == null || email == undefined) return(new Error("Email is null"))
+    if(email.length < 9) return(new Error("Email is small"))
+    if(!email.includes("@")) return(new Error("Email is invalid"))
+    return(true)
+}
+console.log(checkValidPassword("24234"))
